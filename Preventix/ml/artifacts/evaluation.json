@@ -1,0 +1,77 @@
+{
+  "dataset": "UCI AI4I 2020 Predictive Maintenance Dataset",
+  "dataset_path": "C:\\My Files\\indusmind-phase5\\indusmind\\ml\\data\\ai4i2020.csv",
+  "dataset_rows_after_deduplication": 10000,
+  "failure_rate": 0.0339,
+  "features": [
+    "Type",
+    "Air temperature [K]",
+    "Process temperature [K]",
+    "Rotational speed [rpm]",
+    "Torque [Nm]",
+    "Tool wear [min]"
+  ],
+  "dropped_columns": [
+    "UDI",
+    "Product ID",
+    "TWF",
+    "HDF",
+    "PWF",
+    "OSF",
+    "RNF"
+  ],
+  "random_seed": 42,
+  "test_fraction": 0.2,
+  "threshold": 0.5,
+  "accuracy": 0.982,
+  "precision_failure_class": 0.82,
+  "recall_failure_class": 0.6029411764705882,
+  "roc_auc": 0.9651230057240288,
+  "average_precision": 0.7617988625567758,
+  "confusion_matrix_labels_0_1": [
+    [
+      1923,
+      9
+    ],
+    [
+      27,
+      41
+    ]
+  ],
+  "classification_report": {
+    "no_failure": {
+      "precision": 0.9861538461538462,
+      "recall": 0.9953416149068323,
+      "f1-score": 0.990726429675425,
+      "support": 1932.0
+    },
+    "failure": {
+      "precision": 0.82,
+      "recall": 0.6029411764705882,
+      "f1-score": 0.6949152542372882,
+      "support": 68.0
+    },
+    "accuracy": 0.982,
+    "macro avg": {
+      "precision": 0.9030769230769231,
+      "recall": 0.7991413956887102,
+      "f1-score": 0.8428208419563565,
+      "support": 2000.0
+    },
+    "weighted avg": {
+      "precision": 0.9805046153846153,
+      "recall": 0.982,
+      "f1-score": 0.9806688497105284,
+      "support": 2000.0
+    }
+  },
+  "trained_at_utc": "2026-10-11T11:01:54.090393+00:00",
+  "model_type": "scikit-learn RandomForestClassifier pipeline",
+  "model_version": "preventix-ai4i-rf-1.0.0",
+  "limitations": [
+    "Public benchmark data, not measurements from the user's machines.",
+    "The test split is a random holdout, not a time-based or plant-based validation.",
+    "Failure events are rare; accuracy alone is not an adequate measure.",
+    "Threshold 0.5 is a baseline, not a cost-calibrated operational threshold."
+  ]
+}
