@@ -33,7 +33,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_DATA = ROOT / "data" / "ai4i2020.csv"
+DEFAULT_DATA = ROOT / "ai4i2020.csv"
 DEFAULT_OUTPUT = ROOT / "artifacts"
 DATASET_URL = "https://archive.ics.uci.edu/static/public/601/ai4i+2020+predictive+maintenance+dataset.zip"
 TARGET = "Machine failure"
@@ -43,7 +43,7 @@ DROP_COLUMNS = ["UDI", "Product ID", *LEAKAGE_COLUMNS]
 
 def download_dataset(destination: Path) -> Path:
     """Download the public UCI archive and extract its CSV into destination."""
-    destination.mkdir(parents=True, exist_ok=True)
+    destination.parent.mkdir(parents=True, exist_ok=True)
     request = urllib.request.Request(DATASET_URL, headers={"User-Agent": "Preventix-ML-Training/1.0"})
     with TemporaryDirectory() as temp_dir:
         archive_path = Path(temp_dir) / "ai4i.zip"
