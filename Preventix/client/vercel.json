@@ -1,0 +1,14 @@
+
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/api",
+      "destination": "https://preventix-api.vercel.app/api"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "https://preventix-api.vercel.app/api/:path*"
+    }
+  ]
+}
